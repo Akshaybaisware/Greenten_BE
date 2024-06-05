@@ -13,10 +13,14 @@ const VideoSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        // answer: {
-        //     type: String,
-        //     required: true
-        // }
+        submitted: {
+            type: Boolean,
+            default: false
+        },
+        userSubmissions: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }]
     }]
 }, {
     timestamps: true

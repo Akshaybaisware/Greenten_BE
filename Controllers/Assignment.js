@@ -6,7 +6,7 @@ const new_assignmentSchema = require("../Models/Assignment");
 const add_assignment = async(req, res) => {
     try {
         // const userId = req.params.id;
-        const { userId, name, address, pinCode, jobFunctional, phone, annualRevenue, cleanCode } = req.body;
+        const { userId } = req.body;
 
         // Check if all required fields are provided
         // if (!name || !address || !pinCode || !jobFunctional || !phone || !annualRevenue) {
@@ -40,7 +40,7 @@ const add_assignment = async(req, res) => {
         const user = await User.findById(userId);
         console.log(user, "assignment")
         if (user) {
-            if (user.submittedAssignmentCount < 480) {
+            if (user.submittedAssignmentCount < 400) {
                 user.submittedAssignmentCount += 1;
             }
             user.pendingAssignmentCount -= 1;
