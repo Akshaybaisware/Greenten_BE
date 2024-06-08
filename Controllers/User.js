@@ -539,17 +539,16 @@ const sendUserInfo = async(req, res) => {
         <li style="font-size: 16px;"><strong>Phone:</strong> ${user.mobile}</li>
     </ul>
     <p style="font-size: 16px; text-align: justify;">
-    <a href="https://croptonservice.netlify.app/userlogin"> Login To Your Account From Here</p></a>
+    <a href="https://greentenservice.in/userlogin"> Login To Your Account From Here</p></a>
     <p style="font-size: 16px;"><strong>Username:</strong> ${user.username || user.email}</p>
     <p style="font-size: 16px;"><strong>Password:</strong> ${user.password}</p>
-    <p style="font-size: 16px;"><a href="https://croptonservice.netlify.app/stamppaperdonwload/${user.email}" style="color: #007bff; text-decoration: none;">
+    <p style="font-size: 16px;"><a href="https://greentenservice.in/stamppaperdonwload/${user.email}" style="color: #007bff; text-decoration: none;">
 
 
      Click Here To Download Your Legal Agreement.</a></p>
-    <p style="font-size: 16px;">Email : helplinessrvice156@gmail.com</p>
-    <p style="font-size: 16px;">Helpline Number : 9764841890</p>
+  
     <p style="font-size: 16px;">Thanking You</p>
-    <p style="font-size: 16px;"><strong>Cropton Services</strong></p>
+    <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
 </div>
 `,
 
