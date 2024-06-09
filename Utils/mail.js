@@ -73,7 +73,7 @@ const sendConfirmationEmail = async(email, password) => {
                        text-decoration: underline;
                    }
                    .company-info {
-                       background-color: #e8f0eb;
+                    background-color: #364402;
                        color: #fff;
                        padding: 20px;
                        text-align: center;
