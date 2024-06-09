@@ -23,7 +23,7 @@ const sendConfirmationEmail = async(email, password) => {
         const mailOptions = {
             from: process.env.EMAIL,
             to: email,
-            subject: 'Registration Confirmation - Cropton Services',
+            subject: 'Registration Confirmation - Greenten Services',
 
             html: `<!DOCTYPE html>
            <html lang="en">
@@ -38,7 +38,7 @@ const sendConfirmationEmail = async(email, password) => {
                        color: #333;
                        margin: 0;
                        padding: 0;
-                       background-color: #f8f8f8;
+                       background-color: #364402;
                    }
                    .container {
                        max-width: 600px;
@@ -49,7 +49,7 @@ const sendConfirmationEmail = async(email, password) => {
                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                    }
                    .header {
-                       background-color: #e8f0eb;
+                       background-color: #364402;
                        padding: 20px;
                        text-align: center;
                        color: #fff;
@@ -99,7 +99,7 @@ const sendConfirmationEmail = async(email, password) => {
                        <p>Company Information:</p>
                        <p style="color: #ffffff;">Helpline mail id: greenhelpline@gmail.com</p> <!-- Yellow color for mail id -->
                        <p>Helpline No: </p> <!-- Default white color for phone number -->
-                       <p  style="color: #cd0e0e;"> Note :-If u will not Solve the  question u have to pay the require amount as stated in agreement</p>
+                    
                    </div>
                </div>
            </body>
