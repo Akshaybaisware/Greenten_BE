@@ -533,7 +533,7 @@ const sendUserInfo = async (req, res) => {
             html: `
 <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto; background-color: #f4f4f4; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <p style="font-size: 16px; text-align: justify;">Dear ${user.name},</p>
-    <p style="font-size: 16px; text-align: justify;">Registration Details Are As Below :-</p>
+    <p style="font-size: 16px; text-align: justify;">Registration Details Are As Below :-</p> 
     <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="font-size: 16px;"><strong>Email:</strong> ${user.email}</li>
         <li style="font-size: 16px;"><strong>Phone:</strong> ${user.mobile}</li>
@@ -547,8 +547,8 @@ const sendUserInfo = async (req, res) => {
 
      Click Here To Download Your Legal Agreement.</a></p>
   
-        <p  style="font-size: 16px;>Helpline No9823716484: </p> <!-- Default white color for phone number -->
-        <p style="font-size: 16px;">Helpline mail id: greenhelpline@gmail.com</p> <!-- Yellow color for mail id -->
+     <p style="font-size: 16px;">Helpline mail id: greenhelpline@gmail.com</p> 
+     <p  style="font-size: 16px;">Helpline No:9823716484: </p>
     <p style="font-size: 16px;">Thanking You</p>
     <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
      
