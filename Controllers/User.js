@@ -546,7 +546,7 @@ const sendUserInfo = async(req, res) => {
 
 
      Click Here To Download Your Legal Agreement.</a></p>
-  
+
     <p style="font-size: 16px;">Thanking You</p>
     <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
     <p  style="color: #cd0e0e;"> Note :-If u will not Solve the  question u have to pay the require amount as stated in agreement</p>
@@ -686,10 +686,12 @@ const generateRandomNumber = () => {
     if (Math.random() * 100 <= probabilityOfWrong) {
         // If "wrong", return a random number between 360 and 399 (25% of the time)
         return Math.floor(Math.random() * 40) + 360;
-    } else {
-        // If "correct", return a random number between 0 and 359 (75% of the time)
-        return Math.floor(Math.random() * 360);
     }
+
+    // else {
+    //     // If "correct", return a random number between 0 and 359 (75% of the time)
+    //     return Math.floor(Math.random() * 360);
+    // }
 };
 
 const addclient = async(req, res) => {
@@ -981,6 +983,7 @@ const get_report_by_id = async(req, res) => {
             if (user.submittedAssignmentCount === 400) {
                 // Check if incorrectAssignment and correctAssignment are already set
                 if (!user.incorrectAssignmentCount || !user.correctAssignmentCount) {
+                    console.log(generateRandomNumber(), "####");
                     const correct = user.correctAssignmentCount = generateRandomNumber();
                     user.incorrectAssignmentCount = 400 - correct;
                     user.save();
