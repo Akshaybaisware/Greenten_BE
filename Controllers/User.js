@@ -683,10 +683,10 @@ const generateRandomNumber = () => {
     const probabilityOfWrong = 25;
 
     // Check if a random number should be "wrong" based on the probability
-    if (Math.random() * 100 <= probabilityOfWrong) {
-        // If "wrong", return a random number between 360 and 399 (25% of the time)
-        return Math.floor(Math.random() * 40) + 360;
-    }
+    // if (Math.random() * 100 <= probabilityOfWrong) {
+    // If "wrong", return a random number between 360 and 399 (25% of the time)
+    return Math.floor(Math.random() * 40) + 360;
+    // }/
 
     // else {
     //     // If "correct", return a random number between 0 and 359 (75% of the time)
