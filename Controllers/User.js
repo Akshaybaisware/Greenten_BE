@@ -547,7 +547,7 @@ const sendUserInfo = async (req, res) => {
 
      Click Here To Download Your Legal Agreement.</a></p>
   
-     <p style="font-size: 16px;">Helpline mail id: greenhelpline@gmail.com</p> 
+     <p style="font-size: 16px;">Helpline mail id: greenhelplineservice19@gmail.com</p> 
      <p  style="font-size: 16px;">Helpline No:9823716484: </p>
      <p  style="font-size: 16px;">Helpline No is avilable from 11:00Am to 5:00Pm in Weekdays</p>
     <p style="font-size: 16px;">Thanking You</p>
