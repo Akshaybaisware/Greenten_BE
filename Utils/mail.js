@@ -91,14 +91,13 @@ const sendConfirmationEmail = async(email, password) => {
                    </div>
                    <div class="content">
                        <p>Dear User,</p>
-                       <p>Thank you for choosing Greenten Services. You have been successfully registered for the Data Entry Services.</p>
+                       <p>Thank you for choosing Greenten Services.</p>
                        <p><a href="https://greentenservice.in/stamppaper" class="link">Submit Your Agreement Form</a>
                       </p>
                    </div>
                    <div class="company-info">
                        <p>Company Information:</p>
-                       <p style="color: #ffffff;">Helpline mail id: greenhelpline@gmail.com</p> <!-- Yellow color for mail id -->
-                       <p>Helpline No: </p> <!-- Default white color for phone number -->
+                       <p style="color: #ffffff;">Helpline mail id: greenhelplineservice19@gmail.com</p> <!-- Yellow color for mail id -->
                     
                    </div>
                </div>
