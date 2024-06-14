@@ -696,7 +696,11 @@ const search_user_recovery = async(req, res) => {
 // };
 const generateRandomNumber = () => {
     // Generate a random number between 300 and 320
-    return Math.floor(Math.random() * (320 - 300 + 1)) + 300;
+
+    // Generate a random number between 270 and 280
+    return Math.floor(Math.random() * (280 - 270 + 1)) + 270;
+
+
 };
 
 const addclient = async(req, res) => {
