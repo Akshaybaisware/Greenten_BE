@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     pendingAssignmentCount: { type: Number, default: 400 },
     correctAssignmentCount: { type: Number },
     incorrectAssignmentCount: { type: Number },
-    videoNumber: { type: Number, default: 0 },
+    videoNumber: { type: Number, default: 1 },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
