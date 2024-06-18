@@ -89,8 +89,26 @@ const add_assignment = async(req, res) => {
 };
 
 
+const UpdateVideoCount = async(req, res) => {
+    try {
+        const { videonumber, userId } = req.body;
+
+        // Update the videonumber for the given userId
+        const updatedUser = await User.findOneAndUpdate({ _id: userId }, { videoNumber: videonumber }, { new: true });
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json({ message: "Video count updated successfully", user: updatedUser });
+    } catch (error) {
+        res.status(500).json({ message: "Internal Server Error", error: error.message });
+    }
+}
+
 module.exports = {
     uploadVideoQuestions,
     getquestions,
-    add_assignment
+    add_assignment,
+    UpdateVideoCount
 };

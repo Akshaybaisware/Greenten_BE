@@ -44,7 +44,7 @@ const generateRandomPassword = () => {
     return password;
 };
 
-const add_user = async (req, res) => {
+const add_user = async(req, res) => {
     try {
         const { name, email, mobile, address, plan, caller } = req.body;
 
@@ -87,7 +87,7 @@ const add_user = async (req, res) => {
     }
 };
 
-const userlogin = async (req, res) => {
+const userlogin = async(req, res) => {
     try {
         const { email, password } = req.body;
         console.log(email);
@@ -163,7 +163,7 @@ const userlogin = async (req, res) => {
 //         res.status(500).json({ error: 'Internal Server Error' });
 //     }
 // }
-const forgot_password = async (req, res) => {
+const forgot_password = async(req, res) => {
     try {
         console.log("trying");
         // i wnat new password and confirm password from user as he is login the we alredy have email
@@ -202,7 +202,7 @@ const forgot_password = async (req, res) => {
     }
 };
 
-const verify_otp = async (req, res) => {
+const verify_otp = async(req, res) => {
     const { passwordResetOTP } = req.body; // Destructure the passwordResetOTP from req.body
     try {
         const user = await User.findOne({ passwordResetOTP }); // Corrected the query
@@ -218,7 +218,7 @@ const verify_otp = async (req, res) => {
     }
 };
 
-const submit_password = async (req, res) => {
+const submit_password = async(req, res) => {
     const { newPassword, confirmPassword } = req.body;
     const userId = req.params.id; // Assuming you have the correct parameter name
     console.log(userId);
@@ -255,7 +255,7 @@ const submit_password = async (req, res) => {
     }
 };
 
-const get_all_user = async (req, res) => {
+const get_all_user = async(req, res) => {
     try {
         const defaultPage = 1;
         const defaultLimit = 10;
@@ -297,7 +297,7 @@ const get_all_user = async (req, res) => {
     }
 };
 
-const getuser_by_status = async (req, res) => {
+const getuser_by_status = async(req, res) => {
     try {
         const status = req.body.status;
         const users = await User.find({ status });
@@ -308,7 +308,7 @@ const getuser_by_status = async (req, res) => {
     }
 };
 
-const update_user_status = async (req, res) => {
+const update_user_status = async(req, res) => {
     try {
         const userId = req.params.id; // Extract user ID from the URL parameter
         const { status } = req.body; // Destructure the 'status' from req.body
@@ -328,7 +328,7 @@ const update_user_status = async (req, res) => {
     }
 };
 
-const delete_user = async (req, res) => {
+const delete_user = async(req, res) => {
     try {
         // const userId = req.params.id;
         const { userId } = req.body;
@@ -347,7 +347,7 @@ const delete_user = async (req, res) => {
     }
 };
 
-const edit_user = async (req, res) => {
+const edit_user = async(req, res) => {
     try {
         const userId = req.params.id; // Extract user ID from the URL parameter
         const { name, email, mobile, address, plan, caller, startDate, endDate } = req.body;
@@ -356,15 +356,15 @@ const edit_user = async (req, res) => {
         }
         const updatedUser = await User.findByIdAndUpdate(
             userId, {
-            name,
-            email,
-            mobile,
-            address,
-            plan,
-            caller,
-            startDate,
-            endDate,
-        }, { new: true }
+                name,
+                email,
+                mobile,
+                address,
+                plan,
+                caller,
+                startDate,
+                endDate,
+            }, { new: true }
         );
         if (!updatedUser) {
             return res.status(404).json({ message: "User not found." });
@@ -378,7 +378,7 @@ const edit_user = async (req, res) => {
     }
 };
 
-const search_users = async (req, res) => {
+const search_users = async(req, res) => {
     try {
         const { startDate, endDate } = req.body;
         // Check if both startDate and endDate are provided
@@ -403,7 +403,7 @@ const search_users = async (req, res) => {
     }
 };
 
-const getuser_by_id = async (req, res) => {
+const getuser_by_id = async(req, res) => {
     try {
         // const getid = req.params.id;
         const { userId } = req.body;
@@ -416,7 +416,7 @@ const getuser_by_id = async (req, res) => {
     }
 };
 
-const search_user_by_name = async (req, res) => {
+const search_user_by_name = async(req, res) => {
     try {
         const { status } = req.query;
         const { name } = req.body;
@@ -444,7 +444,7 @@ const search_user_by_name = async (req, res) => {
     }
 };
 
-const user_pagination = async (req, res) => {
+const user_pagination = async(req, res) => {
     try {
         const { status } = req.query;
         // Set default values for page and limit
@@ -491,7 +491,7 @@ const user_pagination = async (req, res) => {
     }
 };
 
-const sendUserInfo = async (req, res) => {
+const sendUserInfo = async(req, res) => {
     try {
         // const { userId } = req.params;
         // console.log(userId, "userId");
@@ -533,7 +533,7 @@ const sendUserInfo = async (req, res) => {
             html: `
 <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto; background-color: #f4f4f4; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <p style="font-size: 16px; text-align: justify;">Dear ${user.name},</p>
-    <p style="font-size: 16px; text-align: justify;">Registration Details Are As Below :-</p> 
+    <p style="font-size: 16px; text-align: justify;">Registration Details Are As Below :-</p>
     <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="font-size: 16px;"><strong>Email:</strong> ${user.email}</li>
         <li style="font-size: 16px;"><strong>Phone:</strong> ${user.mobile}</li>
@@ -546,13 +546,13 @@ const sendUserInfo = async (req, res) => {
 
 
      Click Here To Download Your Legal Agreement.</a></p>
-  
-     <p style="font-size: 16px;">Helpline mail id: greenhelplineservice19@gmail.com</p> 
+
+     <p style="font-size: 16px;">Helpline mail id: greenhelplineservice19@gmail.com</p>
      <p  style="font-size: 16px;">Helpline No:9823716484: </p>
      <p  style="font-size: 16px;">Helpline No is avilable from 11:00Am to 5:00Pm in Weekdays</p>
     <p style="font-size: 16px;">Thanking You</p>
     <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
-     
+
     <p   style="font-size: 16px;"> Note :-If u will not Solve the  question u have to pay the require amount as stated in agreement</p>
 </div>
 `,
@@ -573,7 +573,7 @@ const sendUserInfo = async (req, res) => {
     }
 };
 
-const update_endDate = async (req, res) => {
+const update_endDate = async(req, res) => {
     try {
         const userId = req.params.id;
         const amount = req.body.amount;
@@ -608,7 +608,7 @@ const update_endDate = async (req, res) => {
     }
 };
 
-const recovery_user = async (req, res) => {
+const recovery_user = async(req, res) => {
     try {
         const defaultPage = 1;
         const defaultLimit = 10;
@@ -637,8 +637,8 @@ const recovery_user = async (req, res) => {
         // Calculate the skip value based on the page number and limit
         const skip = (pageNumber - 1) * limitNumber;
         const users = await User.find({
-            amount: { $exists: true, $ne: [] },
-        })
+                amount: { $exists: true, $ne: [] },
+            })
             .sort({ _id: -1 })
             .skip(skip)
             .limit(limitNumber);
@@ -655,7 +655,7 @@ const recovery_user = async (req, res) => {
     }
 };
 
-const search_user_recovery = async (req, res) => {
+const search_user_recovery = async(req, res) => {
     try {
         const { name } = req.body;
         // Check if name is provided
@@ -706,7 +706,7 @@ const generateRandomNumber = () => {
 
 };
 
-const addclient = async (req, res) => {
+const addclient = async(req, res) => {
     try {
         const { name, address, email, mobile, plan, selectPlan } = req.body;
         console.log(req.body);
@@ -751,7 +751,7 @@ const addclient = async (req, res) => {
     }
 };
 
-const getallclients = async (req, res) => {
+const getallclients = async(req, res) => {
     try {
         const data = await User.find().sort({ createdAt: -1 });
         res.status(200).json({
@@ -764,7 +764,7 @@ const getallclients = async (req, res) => {
     }
 };
 
-const getallinactiveusers = async (req, res) => {
+const getallinactiveusers = async(req, res) => {
     try {
         const users = await User.find({ status: "InActive" });
         res.status(200).json({ users, message: "All Inactive Users" });
@@ -774,7 +774,7 @@ const getallinactiveusers = async (req, res) => {
     }
 };
 
-const getallpending = async (req, res) => {
+const getallpending = async(req, res) => {
     try {
         const users = await User.find({ status: "Pending" }).sort({ createdAt: -1 });
         res.status(200).json({ users, message: "All Pending Users" });
@@ -784,7 +784,7 @@ const getallpending = async (req, res) => {
     }
 };
 
-const getallregistered = async (req, res) => {
+const getallregistered = async(req, res) => {
     try {
         const users = await User.find({ status: "Registered" });
         res.status(200).json({ users, message: "All Registered Users" });
@@ -792,7 +792,7 @@ const getallregistered = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
-const getallfreez = async (req, res) => {
+const getallfreez = async(req, res) => {
     try {
         const users = await User.find({ status: "Freeze" });
         res.status(200).json({ users, message: "All Freeze Users" });
@@ -801,7 +801,7 @@ const getallfreez = async (req, res) => {
     }
 };
 
-const getallcancel = async (req, res) => {
+const getallcancel = async(req, res) => {
     try {
         const users = await User.find({ status: "Cancel" });
         res.status(200).json({ users, message: "All Cancel Users" });
@@ -810,7 +810,7 @@ const getallcancel = async (req, res) => {
     }
 };
 
-const getallactive = async (req, res) => {
+const getallactive = async(req, res) => {
     try {
         const users = await User.find({ status: "Active" });
         res.status(200).json({ users, message: "All Active Users" });
@@ -819,7 +819,7 @@ const getallactive = async (req, res) => {
     }
 };
 
-const getallsuccess = async (req, res) => {
+const getallsuccess = async(req, res) => {
     try {
         const users = await User.find({ status: "Success" });
         res.status(200).json({ users, message: "All Success Users" });
@@ -828,7 +828,7 @@ const getallsuccess = async (req, res) => {
     }
 };
 
-const gettodaysrecovery = async (req, res) => {
+const gettodaysrecovery = async(req, res) => {
     try {
         const users = await User.find({ status: "Success" });
         res.status(200).json({ users, message: "All Success Users" });
@@ -837,7 +837,7 @@ const gettodaysrecovery = async (req, res) => {
     }
 };
 
-const deleteclient = async (req, res) => {
+const deleteclient = async(req, res) => {
     try {
         // const { id } = req.params;
         const { id } = req.body;
@@ -850,7 +850,7 @@ const deleteclient = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
-const sendemailforretry = async (req, res) => {
+const sendemailforretry = async(req, res) => {
     try {
         const { email } = req.body; // Extract email from req.body
         console.log("email is afnafbajfbakfbajkfbk", email);
@@ -865,7 +865,7 @@ const sendemailforretry = async (req, res) => {
     }
 };
 
-const add_terms = async (req, res) => {
+const add_terms = async(req, res) => {
     try {
         const { email, startdate } = req.body;
 
@@ -936,7 +936,7 @@ const add_terms = async (req, res) => {
             .json({ error: "Internal Server Error", message: error.message });
     }
 };
-const gettoadysassignment = async (req, res) => {
+const gettoadysassignment = async(req, res) => {
     try {
         // Set the start and end of the day
         const startOfDay = new Date();
@@ -959,7 +959,7 @@ const gettoadysassignment = async (req, res) => {
 
 
 
-const getTodayDone = async (req, res) => {
+const getTodayDone = async(req, res) => {
     try {
         // Set start of today
         const startOfDay = new Date();
@@ -984,7 +984,7 @@ const getTodayDone = async (req, res) => {
 }
 
 
-const get_report_by_id = async (req, res) => {
+const get_report_by_id = async(req, res) => {
     try {
         //const id = req.params.id;
         const { id } = req.body;
@@ -1016,7 +1016,7 @@ const get_report_by_id = async (req, res) => {
 };
 
 
-const get_incorrect_assignments = async (req, res) => {
+const get_incorrect_assignments = async(req, res) => {
     try {
         //const userId = req.params.id;
         const { id } = req.body;
@@ -1042,7 +1042,7 @@ const get_incorrect_assignments = async (req, res) => {
 };
 
 
-const usersubmitassignment = async (req, res) => {
+const usersubmitassignment = async(req, res) => {
     try {
         const { userId, name, address, pinCode, jobFunctional, phone, annualRevenue, cleanCode } = req.body;
 
@@ -1062,7 +1062,7 @@ const usersubmitassignment = async (req, res) => {
 
 };
 
-const getuserdetailsbymail = async (req, res) => {
+const getuserdetailsbymail = async(req, res) => {
     try {
         const { email } = req.body;
         console.log(email)
@@ -1077,6 +1077,8 @@ const getuserdetailsbymail = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     };
 }
+
+
 
 
 module.exports = {
