@@ -701,7 +701,9 @@ const generateRandomNumber = () => {
     // Generate a random number between 300 and 320
 
     // Generate a random number between 270 and 280
-    return Math.floor(Math.random() * (280 - 270 + 1)) + 270;
+    // 355
+    // return Math.floor(Math.random() * (280 - 270 + 1)) + 270;
+    return Math.floor(Math.random() * (355 - 340 + 1)) + 340;
 
 
 };
