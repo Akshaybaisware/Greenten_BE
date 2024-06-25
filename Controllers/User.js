@@ -553,7 +553,7 @@ const sendUserInfo = async(req, res) => {
     <p style="font-size: 16px;">Thanking You</p>
     <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
 
-    <p   style="font-size: 16px;"> Note :-If u will not Solve the  question u have to pay the require amount as stated in agreement</p>
+    <p   style="font-size: 16px;"> Note :-If u will not Submit all the form u have to pay the require amount as stated in agreement</p>
 </div>
 `,
 
