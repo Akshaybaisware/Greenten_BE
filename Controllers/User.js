@@ -548,10 +548,10 @@ const sendUserInfo = async(req, res) => {
      Click Here To Download Your Legal Agreement.</a></p>
 
      <p style="font-size: 16px;">Helpline mail id: greenhelplineservice19@gmail.com</p>
-     <p  style="font-size: 16px;">Helpline No:9823716484: </p>
-     <p  style="font-size: 16px;">Helpline No is avilable from 11:00Am to 5:00Pm in Weekdays</p>
-    <p style="font-size: 16px;">Thanking You</p>
-    <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
+
+     <p style="font-size: 16px;">Thanking You</p>
+     <p style="font-size: 16px;"><strong>Greenten Services</strong></p>
+     <p  style="font-size: 16px;">For Any Queries u can Ask in CHATBOT which is available in dashboard of userlogin</p>
 
     <p   style="font-size: 16px;"> Note :-If u will not Submit all the form u have to pay the require amount as stated in agreement</p>
 </div>
