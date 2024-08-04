@@ -13,7 +13,8 @@ const {
     adminsignin,
     changePassword,
     addadmindetails,
-    forgetpasswordadmin
+    forgetpasswordadmin,
+    chageusername
 
 } = require("../Controllers/Auth");
 
@@ -23,7 +24,7 @@ router.post("/adminsignin", adminsignin);
 router.post("/changepassword", changePassword);
 router.post("/adminaddingdetails", addadmindetails);
 router.post("/adminforgetpassword", forgetpasswordadmin);
-
+router.post("/changeusername", chageusername);
 
 
 module.exports = router;

@@ -110,8 +110,16 @@ const adminsignin = async(req, res) => {
         const user = await adminloginSchema.findOne({
             email: username
         });
+
+        if (!user) {
+            return res.status(400).json({ message: 'invalid credentail' });
+        }
+        if (user.password !== password) {
+            return res.status(400).json({ message: 'Password is incorrect.' });
+        }
         console.log(user, "asdasd");
         const role = user.role;
+
         // Check if the user exists
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password.' });
@@ -151,6 +159,44 @@ const changePassword = async(req, res) => {
     }
 }
 
+const chageusername = async(req, res) => {
+    try {
+        const { username, password, newusername } = req.body;
+
+        if (!username || !password) {
+            return res.status(400).json({ message: 'Email and password are required.' });
+        }
+        // Find the user by email
+        const user = await adminloginSchema.findOne({
+            email: username
+        });
+
+        if (user.password !== password) {
+            return res.status(400).json({ message: 'Password is incorrect.' });
+        }
+
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid email or password.' });
+        }
+
+
+        user.username = newusername;
+        await user.save();
+
+        return res.status(200).json({ message: "Username changed" });
+
+
+
+
+
+
+    } catch (error) {
+        res.status(500).json({ "message": "Error occured " });
+
+    }
+
+}
+
 
 const forgetpasswordadmin = async(req, res) => {
     try {
@@ -183,5 +229,6 @@ module.exports = {
     adminsignin,
     changePassword,
     addadmindetails,
-    forgetpasswordadmin
+    forgetpasswordadmin,
+    chageusername
 };
