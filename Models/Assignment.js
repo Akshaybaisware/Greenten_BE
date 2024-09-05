@@ -8,7 +8,7 @@ const new_assignmentSchema = new mongoose.Schema({
         type: String,
     },
     pinCode: {
-        type: Number,
+        type: String,
     },
     jobFunctional: {
         type: String,
