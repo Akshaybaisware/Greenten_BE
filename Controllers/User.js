@@ -71,8 +71,8 @@ const add_user = async(req, res) => {
 
             status: "Registered",
             password,
-            totalAssignment: 400,
-            pendingAssignment: 400,
+            totalAssignmentLimit: 540,
+            pendingAssignmentCount: 540,
         });
 
         const savedUser = await newUser.save();
