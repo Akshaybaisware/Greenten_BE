@@ -154,13 +154,13 @@ const addmultipleasignment = async(req, res) => {
         for (let i = 0; i < assignments.length; i++) {
             const assignmentData = {
                 userId: assignments[i].userId,
-                name: assignments[i].name,
-                address: assignments[i].address,
-                pinCode: assignments[i].pinCode,
-                jobFunctional: assignments[i].jobFunctional,
-                phone: assignments[i].phone,
-                annualRevenue: assignments[i].annualRevenue,
-                cleanCode: assignments[i].cleanCode
+                firstname: assignments[i].firstname,
+                lastname: assignments[i].lastname,
+                email: assignments[i].email,
+                phonenumber: assignments[i].phonenumber,
+                licencenumber: assignments[i].licencenumber,
+                ip: assignments[i].ip,
+                zipcode: assignments[i].zipcode
             };
             const newAssignment = new new_assignmentSchema(assignmentData); // Assuming CustomerAssignment is your Mongoose model
             await newAssignment.save();

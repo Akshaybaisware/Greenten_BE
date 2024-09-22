@@ -1,25 +1,58 @@
 const mongoose = require('mongoose');
 
+// const new_assignmentSchema = new mongoose.Schema({
+//     name: {
+//         type: String,
+//     },
+//     address: {
+//         type: String,
+//     },
+//     pinCode: {
+//         type: String,
+//     },
+//     jobFunctional: {
+//         type: String,
+//     },
+//     phone: {
+//         type: String,
+//     },
+//     annualRevenue: {
+//         type: String,
+//     },
+//     cleanCode: {
+//         type: String,
+//     },
+//     reference_assignment: {
+//         type: String,
+//     },
+//     userId: {
+//         type: String,
+//     },
+//     status: { type: String },
+// }, {
+//     timestamps: true
+// });
+
 const new_assignmentSchema = new mongoose.Schema({
-    name: {
+    firstname: {
         type: String,
     },
-    address: {
+    lastname: {
         type: String,
     },
-    pinCode: {
+    email: {
         type: String,
     },
-    jobFunctional: {
+    phonenumber: {
         type: String,
     },
-    phone: {
+    licencenumber: {
         type: String,
     },
-    annualRevenue: {
+    ip: {
         type: String,
     },
-    cleanCode: {
+    zipcode: {
         type: String,
     },
     reference_assignment: {
@@ -32,5 +65,4 @@ const new_assignmentSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
-
 module.exports = mongoose.model('new_Assignment', new_assignmentSchema);
